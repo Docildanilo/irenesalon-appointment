@@ -1,0 +1,10 @@
+﻿@model List_Services
+
+<h1>Services</h1>
+
+<ul>
+    @foreach (var services in Model.GetServices)
+    {
+        <li><a asp-controller="Home" asp-action="ServicesInfo" asp-route-id="@services.ID" >@services.Name <span>@services.Price</span></a></li>
+    }
+</ul>

@@ -28,6 +28,7 @@ namespace irenesalon.appointment
 #if DEBUG
             mvcBuilder.AddRazorRuntimeCompilation();
 #endif
+            services.AddRouting(options => options.LowercaseUrls = true);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

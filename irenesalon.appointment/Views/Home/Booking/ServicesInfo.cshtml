@@ -1,0 +1,16 @@
+﻿@model Irene_Services
+
+<div>
+    <p>@Model.ID</p>
+    <p>@Model.Name</p>
+    <p>@Model.Price</p>
+
+    <div>
+        <ul>
+            @foreach (var row in Model.Staffs)
+            {
+                <li>@row.Name</li>
+            }
+        </ul>
+    </div>
+</div>
