@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,6 +31,15 @@ namespace irenesalon.appointment
             mvcBuilder.AddRazorRuntimeCompilation();
 #endif
             services.AddRouting(options => options.LowercaseUrls = true);
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+           .AddCookie(ck =>
+           {
+               ck.Cookie.IsEssential = true;
+               ck.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+               ck.Cookie.Name = "dandan";
+               ck.LoginPath = "/admin/passport/login";
+           });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -51,6 +62,11 @@ namespace irenesalon.appointment
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAreaControllerRoute(
+                    name: "admin",
+                    areaName: "admin",
+                    pattern: "admin/{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

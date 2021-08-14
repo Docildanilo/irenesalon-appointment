@@ -90,9 +90,13 @@ namespace irenesalon.appointment.Controllers
         [HttpPost]
         public IActionResult SetAppointment(Page_Home Model)
         {
-            var DisplayModel = new Appointment();
-            DisplayModel.Service_ID = Model.Service_ID;
-            DisplayModel.Date = Model.Appointment_Date;
+            var DisplayModel = new Appointment
+            {
+                Service_ID = Model.Service_ID,
+                Date = Model.Appointment_Date,
+                Name = Model.Name,
+                Mobile_No = Model.Mobile_No
+            };
 
             return View("Appointment", DisplayModel);
         }
