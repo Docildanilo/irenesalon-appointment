@@ -6,4 +6,3 @@ Syntax: dotnet run --project <path of .csproj>
 
 dotnet run --project source/irenesalon.appointment.csproj
 ```
-

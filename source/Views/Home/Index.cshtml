@@ -1,0 +1,115 @@
+﻿@model Page_Home
+
+@{
+    ViewData["Title"] = "Irene Salon - Appointment System";
+}
+
+ <div class="intro py-8 bg-primary position-relative text-white">
+    <div class="bg-overlay-primary">
+      <img src="~/assets/img/landing.jpg" class="img-fluid img-cover" alt="Robust UI Kit">
+    </div>
+    <div class="intro-content mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 align-self-center">
+            <h1 class="display-4 mb-3">Set your appointment<br></h1>
+            <p class="lead mb-4">Robust is a premium theme built with Bootstrap. The theme is fully customizable &amp;
+              can be used for any type of application.</p>
+          </div>
+          <div class="col-md-5 ml-auto">
+            <div class="card">
+              <div class="card-body text-dark">
+                <form method="post" asp-controller="Home" asp-action="SetAppointment">
+                  <div class="form-group">
+                    <label for="appointment_date">Date</label>
+                    <input type="date" class="form-control" name="appointment_date" placeholder="yyyy-MM-dd" required="" >
+                  </div>
+                  <div class="form-group">
+                    <label for="appointment_time">Time</label>
+                    <input type="time" class="form-control" name="appointment_time" placeholder="hh:mm" required="" >
+                  </div>
+                  <div class="form-group">
+                    <label for="service_id">Services</label>
+                        <select class="form-control" name="service_id" required="">
+                            <option value="">Choose...</option>
+                            @foreach (var Row in Model.Services)
+                            {
+                                <option value="@Row.ID">@Row.Name</option>
+                            }
+                        </select>
+                  </div>
+                  <button type="submit" class="btn btn-success btn-block btn-lg mb-2">Book Now</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<main class="main" role="main">
+    <div class="bg-white py-7">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 mx-auto">
+            <div class="row">
+              <div class="col-md-4 ml-auto">
+                <h2>Creative &amp; flexible Bootstrap UI Kit</h2>
+              </div>
+              <div class="col-md-6 mr-auto">
+                <p class="lead text-dark">
+                  Robust includes various demo pages for building your custom app, blog or landing page. All code is
+                  handwritten, all our components are optimized for desktop, tablet and mobile.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-4">
+            <div class="media">
+              <div class="icon mr-3">
+                <i class="far fa-id-badge"></i>
+              </div>
+              <div class="media-body">
+                <h3 class="h4">Bootstrap 4</h3>
+                <p class="text-dark text-left">
+                  With mobile, tablet &amp; desktop support it doesn't matter what device you're using. Robust is
+                  responsive in all browsers.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="media">
+              <div class="icon mr-3">
+                <i class="far fa-hand-scissors"></i>
+              </div>
+              <div class="media-body">
+                <h3 class="h4">Mobile friendly</h3>
+                <p class="text-dark text-left">
+                  Robust works perfectly with: Chrome, Firefox, Safari, Opera and IE 10+. We're working hard to support
+                  them.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="media">
+              <div class="icon mr-3">
+                <i class="far fa-comments"></i>
+              </div>
+              <div class="media-body">
+                <h3 class="h4">Premium support</h3>
+                <p class="text-dark text-left">
+                  Robust is supported by specialists who provide quick and effective support. Usually an email reply
+                  takes &lt;24h.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.row -->
+      </div>
+    </div>
+  </main>
