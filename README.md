@@ -14,8 +14,7 @@ dotnet run --project source/irenesalon.appointment.csproj
 
 ## Apointment
 [ ] Appoint Form Name, Mobile, Date, Services
-[ ] Staff Availability
- - Name, Mobile, Date, Services
+[ ] Staff Availability, Name, Mobile, Date, Services
 [ ] Time Filter (Dropdown) / Get Duration of Every Services (Irene Salon)
 [ ] Available Staff / Per Time
 [ ] Confirm Appointment
