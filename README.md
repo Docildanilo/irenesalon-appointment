@@ -16,25 +16,25 @@ dotnet run --project source/irenesalon.appointment.csproj
 [ ] Appoint Form Name, Mobile, Date, Services
 [ ] Staff Availability
  - Name, Mobile, Date, Services
- - [ ] Time Filter (Dropdown) / Get Duration of Every Services (Irene Salon)
- - [ ] Available Staff / Per Time
- - [ ] Confirm Appointment
- - [ ] Send OTP SMS (One Time Passord)
- - [ ] Save to Booking Appointment
+[ ] Time Filter (Dropdown) / Get Duration of Every Services (Irene Salon)
+[ ] Available Staff / Per Time
+[ ] Confirm Appointment
+[ ] Send OTP SMS (One Time Passord)
+[ ] Save to Booking Appointment
 
 ## Admin Dashboard
 [ ] Login
 [ ] Dashboard
 [ ] Booking
-- [ ] Verify Or Confimed
-- [ ] STaff List of Services / Customer
+[ ] Verify Or Confimed
+[ ] STaff List of Services / Customer
 [ ] Services
-- [ ] Rates
-- [ ] Schedule
-- [ ] Staff
+[ ] Rates
+[ ] Schedule
 [ ] Staff
-- [ ] Information
-- [ ] Services
+[ ] Staff
+[ ] Information
+[ ] Services
 [ ] User
 [ ] Reports
 
